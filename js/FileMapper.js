@@ -68,10 +68,10 @@ try {
           });
           return elements;
         }, {});
-        console.log(JSON.stringify(output, null, 2));
+        //console.log(JSON.stringify(output, null, 2));
         var csvEntries = Object.keys(output);
-        console.log(csvEntries.shift());
-        console.log(csvEntries);
+        csvEntries.shift();
+        
 
         // Decoding base-64 image
         function decodeBase64Image(dataString) {
@@ -91,12 +91,11 @@ try {
 
 
         csvEntries.forEach(function(entry){
-          console.log(output[entry][0].picture);
+          //console.log(output[entry][0].picture);
           // Regular expression for image type:
           // This regular image extracts the "jpeg" from "image/jpeg"
           var imageTypeRegularExpression      = /\/(.*?)$/;
           var base64Data = 'data:image/jpeg;base64,'+ output[entry][0].picture;
-          console.log(base64Data);
           var imageBuffer                      = decodeBase64Image(base64Data);
           var userUploadedFeedMessagesLocation = __dirname+'\\';
 
